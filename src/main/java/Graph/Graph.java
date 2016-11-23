@@ -12,8 +12,13 @@ public class Graph {
             root.add(i, new ArrayList<Integer>());
     }
 
-    public void setChildren(int parent, List<Integer> childs){
-        root.add(parent, childs);
+    public void setChildren(int parent, List<Integer> children){
+        if(!root.get(parent).isEmpty()){
+            List<Integer> temp = root.get(parent);
+            for (int i : temp)
+                children.add(i);
+        }
+        root.add(parent, children);
     }
 
     public List<Integer> getChildren(int parent) {

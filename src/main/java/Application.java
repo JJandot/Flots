@@ -12,6 +12,9 @@ public class Application {
         list.add(4);
         list.add(6);
         g.setChildren(2, list);
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(55);
+        g.setChildren(2, list2);
         List<Integer> list1 = new ArrayList<>();
         list1.add(7);
         list1.add(8);
