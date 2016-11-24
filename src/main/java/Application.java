@@ -12,16 +12,16 @@ public class Application {
         list.add(4);
         list.add(6);
         g.setChildren(2, list);
-        List<Integer> list2 = new ArrayList<>();
-        list2.add(55);
-        g.setChildren(2, list2);
-        List<Integer> list1 = new ArrayList<>();
-        list1.add(7);
-        list1.add(8);
-        list1.add(9);
-        g.setChildren(5, list1);
 
-        System.out.println(g.getChildren(9));
+        List<Integer> liste = new ArrayList<>();
+        liste.add(1);
+        liste.add(3);
+        liste.add(2);
+        g.setChildren(1, liste);
+
+        g.addEdge(5, 2, 3);
+        g.displayWeights();
+        g.displayWeights(2, 5);
 
         System.out.println(g.toString());
     }
