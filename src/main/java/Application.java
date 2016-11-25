@@ -20,9 +20,10 @@ public class Application {
         g.setChildren(1, liste);
 
         g.addEdge(5, 2, 3);
-        g.displayWeights();
-        g.displayWeights(2, 5);
+        g.getWeights();
+        g.getWeights(2, 5);
 
+        System.out.println(g.getChildren(5));
         System.out.println(g.toString());
     }
 }

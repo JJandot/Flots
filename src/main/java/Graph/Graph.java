@@ -51,23 +51,12 @@ public class Graph {
         weights[child][parent] = weight;
     }
 
-    public void displayWeights(){
-        for (int i = 0; i < weights.length; ++i){
-            for(int j = 0; j < weights.length; ++j) {
-                if(weights[i][j] == 0)
-                    System.out.print("x");
-                else
-                    System.out.print(weights[i][j]);
-            }
-            System.out.println();
-        }
+    public int[][] getWeights(){
+        return weights;
     }
 
-    public void displayWeights(int vertex, int vertex2){
-        if(weights[vertex][vertex2] == 0)
-            System.out.println("Les sommets " + vertex + " et " + vertex2 + " ne sont pas reliés");
-        else
-            System.out.println("Le poids entre " + vertex + " et " + vertex2 + " est de : " + weights[vertex][vertex2]);
+    public int getWeights(int vertex, int vertex2){
+        return weights[vertex][vertex2];
     }
 
     public List<Integer> getChildren(int parent) {
