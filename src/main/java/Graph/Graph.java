@@ -16,11 +16,8 @@ public class Graph {
 
     public void setChildren(int parent, List<Integer> children){
         for (int child : children) {
-            if(parent != child) {
+            if(parent != child)
                 root.get(parent).add(child);
-                if(!root.get(child).contains(parent))
-                    root.get(child).add(parent);
-            }
         }
     }
 
@@ -29,8 +26,6 @@ public class Graph {
             if(parent != child) {
                 addEdge(parent, child, weights.get(children.indexOf(child)));
                 root.get(parent).add(child);
-                if(!root.get(child).contains(parent))
-                    root.get(child).add(parent);
             }
         }
     }
@@ -40,15 +35,12 @@ public class Graph {
             if(parent != child) {
                 addEdge(parent, child, weight);
                 root.get(parent).add(child);
-                if(!root.get(child).contains(parent))
-                    root.get(child).add(parent);
             }
         }
     }
 
     public void addEdge(int parent, int child, int weight){
         weights[parent][child] = weight;
-        weights[child][parent] = weight;
     }
 
     public int[][] getWeights(){
@@ -61,6 +53,10 @@ public class Graph {
 
     public List<Integer> getChildren(int parent) {
         return root.get(parent);
+    }
+
+    public List<List<Integer>> getChildren(){
+        return root;
     }
 
     @Override
