@@ -2,6 +2,8 @@ package Graph;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.exit;
+
 public class Graph {
 
     private List<List<Integer>> root;
@@ -40,7 +42,14 @@ public class Graph {
     }
 
     public void addEdge(int parent, int child, int weight){
-        weights[parent][child] = weight;
+        if(getChildren(parent).contains(child))
+            weights[parent][child] = weight;
+        else {
+            System.out.println("Erreur, " + parent + " n'est pas relié à " + child);
+            System.out.println("Revoir les arguments de addEdge (graphe orienté)");
+            exit(-1);
+        }
+
     }
 
     public int[][] getWeights(){

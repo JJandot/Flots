@@ -23,11 +23,17 @@ public class FlotMax {
 
         flotMax = 0;
         flot = new ArrayList<>();
+        flot.add(debut);
+
+        calcFlot(debut, fin);
+        System.out.println("flot max = " + flotMax);
+        System.out.println(flot);
     }
 
-    public void calcFlot(){
-        neighboors.get(debut);
+    private void calcFlot(int debut, int fin){
+
     }
+
 
 
 }

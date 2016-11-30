@@ -1,3 +1,4 @@
+import Algos.FlotMax;
 import Graph.Graph;
 
 import java.util.ArrayList;
@@ -19,9 +20,18 @@ public class Application {
         liste.add(2);
         g.setChildren(1, liste);
 
-        g.addEdge(5, 2, 3);
+        List<Integer> zerfb = new ArrayList<>();
+        zerfb.add(9);
+        zerfb.add(1);
+        zerfb.add(8);
+        g.setChildren(5, zerfb);
 
-        System.out.println(g.getChildren(5));
-        System.out.println(g.toString());
+        g.addEdge(2, 5, 3);
+        g.addEdge(5, 1, 3);
+        g.addEdge(1, 3, 2);
+
+        System.out.println("Graphe : " + g.getChildren());
+
+        new FlotMax(g, 2, 3);
     }
 }
